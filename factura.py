@@ -14,7 +14,8 @@ class Factura:
 
     def __str__(self):
         productos_str = "\n".join([str(p) for p in self.productos])
-        return (f"Factura ID: {self.id}\nFecha: {self.fecha}\n"
+        fecha_str = self.fecha.strftime('%Y-%m-%d %H:%M:%S')
+        return (f"Factura ID: {self.id}\nFecha: {fecha_str}\n"
                 f"Cliente: {self.cliente}\n"
                 f"Productos:\n{productos_str}\n"
                 f"Total: {self.total}")
